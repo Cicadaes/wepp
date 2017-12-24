@@ -1,16 +1,12 @@
-var browserSync = require('browser-sync');
-var yargs = require('yargs');
-
-var browser = browserSync.create();
+var path = require('path')
 
 module.exports = function (gulp, C) {
     gulp.task('serve', function () {
-        var argv = yargs.argv;
-        var params = eval('('+ argv.params +')');
-        browser.init({
-            port: params.port,
-            server: argv.cwd2
+        C.plugins.connect.server({
+            root: C.cwd,
+            port: C.argv.port,
+            livereload: true
         });
-        gulp.watch(argv.cwd2 + '**/*.*').on('change', browserSync.reload);
+        gulp.watch([path.resolve(C.cwd, './*.html')], ['dev.html']);
     });
 }

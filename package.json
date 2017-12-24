@@ -11,9 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.21.0",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
     "gulp-load-plugins": "^1.5.0",
     "lodash": "^4.17.4",
     "shelljs": "^0.7.8",
