@@ -2,8 +2,10 @@
   "name": "wepp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "bin": "bin/cli.js",
+  "main": "./lib/wepp.js",
+  "bin": {
+    "wepp": "./bin/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,11 +13,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-load-plugins": "^1.5.0",
-    "lodash": "^4.17.4",
     "shelljs": "^0.7.8",
     "yargs": "^10.0.3"
   }
