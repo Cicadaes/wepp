@@ -1,15 +1,14 @@
 var gulp = require('gulp');
-var glob = require('glob');
-var argv = require('yargs').argv;
-var common = require('./tools/common');
+var taskLoader = require('gulp-simple-task-loader');
+var gulpLoadPlugins = require('gulp-load-plugins');
 
-common.cwd = argv.cwd2;
-common.argv = eval('('+ argv.params +')');
+taskLoader({
+    taskDirectory: 'tools/tasks',
+    config: JSON.parse(process.env.wepp),
+    configFile: '../config.js',
+    plugins: gulpLoadPlugins(),
+    filenameDelimiter: '-',
+    tasknameDelimiter: ':'
+}, gulp)
 
-// 载入任务
-var tasks = glob.sync('**/*.js', {cwd: './tools/tasks', absolute: true})
-tasks.forEach(function (t) {
-    require(t)(gulp, common)
-});
-
-gulp.task('default', ['serve'])
+// gulp.task('default', ['serve'])

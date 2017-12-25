@@ -1,14 +1,13 @@
 var path = require('path');
 
-module.exports = function (gulp, C) {
-    gulp.task('serve', function () {
-        var wepp = JSON.parse(process.env.wepp);
-        C.plugins.connect.server({
-            root: wepp.cwd,
-            host: wepp.argv.host,
-            port: wepp.argv.port,
+module.exports = function (gulp, config, plugins) {
+    return function () {
+        plugins.connect.server({
+            root: config.cwd,
+            host: config.argv.host,
+            port: config.argv.port,
             livereload: true
         });
-        gulp.watch([path.resolve(wepp.cwd, './*.html')], ['dev.html']);
-    });
+        gulp.watch([path.resolve(config.cwd, './*.html')], ['dev:html']);
+    }
 }
