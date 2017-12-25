@@ -1,4 +1,4 @@
-var path = require('path')
+var path = require('path');
 
 module.exports = function (gulp, C) {
     gulp.task('serve', function () {
