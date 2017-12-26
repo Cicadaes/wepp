@@ -4,7 +4,7 @@
   "description": "",
   "main": "./lib/wepp.js",
   "bin": {
-    "wepp": "./bin/cli.js"
+    "wepp": "./bin/wepp"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

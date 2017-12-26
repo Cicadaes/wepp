@@ -1,7 +1,7 @@
 var shell = require('shelljs');
 
 exports.command = 'serve [host|port]';
-exports.desc = '启动wepp项目';
+exports.desc = '启动项目';
 exports.builder = {
     host: {
         default: 'localhost'

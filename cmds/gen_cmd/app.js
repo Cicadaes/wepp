@@ -1,7 +1,7 @@
 var shell = require('shelljs');
 
 exports.command = 'app [name]';
-exports.describe = '创建wepp项目';
+exports.describe = '创建项目';
 exports.builder = {
     name: {
         demand: true
