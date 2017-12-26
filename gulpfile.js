@@ -3,7 +3,7 @@ var taskLoader = require('gulp-simple-task-loader');
 var gulpLoadPlugins = require('gulp-load-plugins');
 
 taskLoader({
-    taskDirectory: 'tools/tasks',
+    taskDirectory: 'gulps/tasks',
     config: JSON.parse(process.env.wepp),
     configFile: '../config.js',
     plugins: gulpLoadPlugins(),
