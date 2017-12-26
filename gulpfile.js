@@ -1,6 +1,7 @@
 var gulp = require('gulp');
-var taskLoader = require('gulp-simple-task-loader');
 var gulpLoadPlugins = require('gulp-load-plugins');
+
+var taskLoader = require('./gulps/plugins/task-loader');
 
 taskLoader({
     taskDirectory: 'gulps/tasks',
