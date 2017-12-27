@@ -4,7 +4,7 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 
 var tasksLoader = require('./gulps/plugins/tasks-loader');
 
-tasksLoader({
+new tasksLoader({
     path: path.resolve(__dirname, './gulps/tasks'),
     config: JSON.parse(process.env.wepp),
     plugins: gulpLoadPlugins(),

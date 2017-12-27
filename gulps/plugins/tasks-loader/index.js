@@ -12,11 +12,15 @@ function tasksLoader (options, existingGulp) {
       };
 
     options = Object.assign({}, DEFAULT_OPTIONS, options);
+    this.tasks = [];
 
-    processTaskDirectory(options, gulp);
+    processTaskDirectory.call(this, options, gulp);
+
+    return this;
 }
 
 function processTaskDirectory (options, gulp) {
+    var self = this;
     requireDirectory(module, options.path, {
         visit: Visitor
     });
@@ -30,6 +34,7 @@ function processTaskDirectory (options, gulp) {
         module = normalizeModule(module);
 
         var taskName = taskNameMapPath(modulePath);
+        self.tasks.push(taskName);
         
         gulp.task(
             taskName,
