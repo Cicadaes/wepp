@@ -1,7 +1,7 @@
 var path = require('path');
 var requireDirectory = require('require-directory');
 
-function tasksLoader (options, existingGulp) {
+function tasksLoader (options, existingGulp, wepp) {
     var gulp = existingGulp || require('gulp');
 
     var DEFAULT_OPTIONS = {
@@ -14,12 +14,12 @@ function tasksLoader (options, existingGulp) {
     options = Object.assign({}, DEFAULT_OPTIONS, options);
     this.tasks = [];
 
-    processTaskDirectory.call(this, options, gulp);
+    processTaskDirectory.call(this, options, gulp, wepp);
 
     return this;
 }
 
-function processTaskDirectory (options, gulp) {
+function processTaskDirectory (options, gulp, wepp) {
     var self = this;
     requireDirectory(module, options.path, {
         visit: Visitor
@@ -48,7 +48,7 @@ function processTaskDirectory (options, gulp) {
                 return;
             }
             // console.log(module.fn.apply(module)())
-            return module.fn.call(module, gulp, options.config, options.plugins)
+            return module.fn.call(module, gulp, options.config, options.plugins, wepp)
         }
     }
 

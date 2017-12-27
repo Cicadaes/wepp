@@ -6,10 +6,10 @@ var tasksLoader = require('./gulps/plugins/tasks-loader');
 
 new tasksLoader({
     path: path.resolve(__dirname, './gulps/tasks'),
-    config: JSON.parse(process.env.wepp),
+    config: {},
     plugins: gulpLoadPlugins(),
     delimiter: ':'
-}, gulp)
+}, gulp, JSON.parse(process.env.wepp))
 
 // var taskLoader = require('./gulps/plugins/task-loader');
 

@@ -12,10 +12,8 @@ exports.builder = {
     }
 };
 exports.handler = function (argv) {
-    var cmd = argv['_'][0];
-    
     wepp.argv = argv;
     process.env.wepp = JSON.stringify(wepp);
-    shell.cd(wepp.dirname); // 脚本目录
-    shell.exec('gulp '+ cmd); // wepp.cwd执行wepp命令的当前目录
+    shell.cd(wepp.root); // 脚本目录
+    shell.exec('gulp serve'); // wepp.cwd执行wepp命令的当前目录
 }

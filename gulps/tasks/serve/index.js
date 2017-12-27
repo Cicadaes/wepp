@@ -1,11 +1,11 @@
 var path = require('path');
 
-module.exports = function (gulp, config, plugins) {
+module.exports = function (gulp, config, plugins, wepp) {
     plugins.connect.server({
-        root: config.cwd,
-        host: config.argv.host,
-        port: config.argv.port,
+        root: wepp.cwd,
+        host: wepp.argv.host,
+        port: wepp.argv.port,
         livereload: true
     });
-    gulp.watch([path.resolve(config.cwd, './*.html')], ['dev:html']);
+    gulp.watch([path.resolve(wepp.cwd, './*.html')], ['dev:html']);
 }
