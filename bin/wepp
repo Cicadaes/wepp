@@ -1,13 +1,26 @@
 #!/usr/bin/env node
 
 var yargs = require('yargs');
+
 require('../lib/wepp');
 
 yargs.commandDir('../cmds')
     .usage('$0 [domain/namespace] <command> [--args]')
     .demandCommand(1, 'You must specify a domain/namespace and a command')
+    .showHelpOnFail(false, 'Specify --help for available options')
     .help('h')
     .alias('h', 'help')
     .version()
-    .epilog('for more information visit')
-    .argv;
+    .epilog('for more information visit');
+
+var argv = yargs.argv;
+var commands = yargs.getCommandInstance().getCommands();
+if (commands.length > 0) {
+    if (argv.command) {
+        if (commands.indexOf(argv.command)) {
+            yargs.showHelp();
+        }
+    } else if (commands.indexOf(argv._[0]) === -1) {
+        yargs.showHelp();
+    }
+}
