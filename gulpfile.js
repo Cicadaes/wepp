@@ -2,6 +2,7 @@ var path = require('path');
 var gulp = require('gulp');
 var gulpLoadPlugins = require('gulp-load-plugins');
 
+var wepp = require('./lib/wepp');
 var tasksLoader = require('./gulps/plugins/tasks-loader');
 
 new tasksLoader({
@@ -9,7 +10,7 @@ new tasksLoader({
     config: {},
     plugins: gulpLoadPlugins(),
     delimiter: ':'
-}, gulp, JSON.parse(process.env.wepp))
+}, gulp, wepp)
 
 // var taskLoader = require('./gulps/plugins/task-loader');
 
