@@ -1,0 +1,29 @@
+{
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Gulp wepp",
+                "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
+                "args": [
+                    "gen:app",
+                    "--unArgv",
+                    "gen,app,--name,wepp_demo"
+                ]
+            },
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Cmd wepp",
+                "timeout": 100000,
+                "program": "${workspaceRoot}\\bin\\wepp",
+                "args": [
+                    "gen",
+                    "app",
+                    "--name",
+                    "wepp_demo"
+                ]
+            }
+        ]
+    }

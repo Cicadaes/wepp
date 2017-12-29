@@ -12,6 +12,7 @@ exports.builder = {
     }
 };
 exports.handler = function (argv) {
+    argv = wepp.unparseArgv(argv);
     shell.cd(wepp.root); // 脚本目录
-    shell.exec('gulp serve --unArgv ' + wepp.unparseArgv(argv)); // wepp.cwd执行wepp命令的当前目录
+    shell.exec('gulp serve --unArgv ' + argv); // wepp.cwd执行wepp命令的当前目录
 }

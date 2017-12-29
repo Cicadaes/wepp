@@ -14,6 +14,7 @@ exports.builder = function (yargs) {
         .help('h');
 };
 exports.handler = function (argv) {
+    argv = wepp.unparseArgv(argv);
     shell.cd(wepp.root); // 脚本目录
-    shell.exec('gulp gen:app'); // wepp.cwd执行wepp命令的当前目录
+    shell.exec('gulp gen:app --unArgv ' + argv); // wepp.cwd执行wepp命令的当前目录
 };
