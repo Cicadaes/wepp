@@ -7,7 +7,7 @@
                 "name": "Gulp wepp",
                 "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
                 "args": [
-                    "core:mkdirp",
+                    "init",
                     "--unArgv",
                     "gen,app,--name,wepp_demo"
                 ]
@@ -19,8 +19,7 @@
                 "timeout": 100000,
                 "program": "${workspaceRoot}\\bin\\wepp",
                 "args": [
-                    "gen",
-                    "app",
+                    "init",
                     "--name",
                     "wepp_demo"
                 ]
