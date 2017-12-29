@@ -1,5 +1,6 @@
 var path = require('path');
 var requireDirectory = require('require-directory');
+var async = require('async');
 
 function tasksLoader (options, existingGulp, wepp) {
     var gulp = existingGulp || require('gulp');
@@ -19,6 +20,10 @@ function tasksLoader (options, existingGulp, wepp) {
     return this;
 }
 
+function noop () {
+    return;
+}
+
 function processTaskDirectory (options, gulp, wepp) {
     var self = this;
     requireDirectory(module, options.path, {
@@ -35,12 +40,33 @@ function processTaskDirectory (options, gulp, wepp) {
 
         var taskName = taskNameMapPath(modulePath);
         self.tasks.push(taskName);
+
+        var taskEntry = module.fn.call(module, gulp, options.config, options.plugins, wepp);
+
+        var deps =  taskEntry.deps || [];
+        var argvs = taskEntry.argvs || [];
+        //  任务
+        var action = typeof taskEntry === 'function' ? taskEntry : taskEntry.action || noop;
+
+        if (argvs.length > 0) {
+            gulp.task(
+                taskName,
+                deps,
+                function () {
+                    async.map(argvs, function(argv, cb) {
+                        action(argv, cb);
+                    });
+                }
+            )
+        } else {
+            gulp.task(
+                taskName,
+                deps,
+                action
+            );
+        }
         
-        gulp.task(
-            taskName,
-            module.deps || [],
-            module.nativeTask || taskFunction
-        );
+        
 
         function taskFunction (cb) {
             if ('function' !== typeof module.fn) {

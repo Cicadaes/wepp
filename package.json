@@ -13,11 +13,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "async": "^2.6.0",
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-mkdirp": "^0.1.1",
+    "mkdirp": "^0.5.1",
     "mocha": "^4.0.1",
     "require-directory": "^2.1.1",
     "shelljs": "^0.7.8",
