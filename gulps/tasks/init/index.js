@@ -4,6 +4,6 @@ module.exports = function (gulp, config, plugins, wepp) {
     // console.log(plugins.mkdirp())
     var argv = wepp.parseArgv();
     return {
-        deps: ['init:genProjDir', 'init:copyBaseFile']
+        deps: ['init:delProjDir', 'init:genProjDir', 'init:copyBaseFile']
     }
 }
