@@ -8,6 +8,7 @@ var mkdirp = require('mkdirp');
 module.exports = function (gulp, config, plugins, wepp) {
     return function () {
         var argv = wepp.parseArgv();
+        var __proj__ = path.join(argv.__cwd__, argv.name);
         var projDir = [
             'config',
             'app',
@@ -20,14 +21,8 @@ module.exports = function (gulp, config, plugins, wepp) {
         ];
 
         projDir.forEach(function (dir) {
-            var dirPath = path.join(argv.__proj__, argv.name, dir);
-            mkdirp(dirPath, function (err) {
-                if (err) {
-                    console.error(err);
-                } else {
-                    console.log('generate ' + dirPath + ' success...');
-                }
-            })
+            var folder = path.join(__proj__, dir);
+            mkdirp.sync(folder);
         });
     }
 };

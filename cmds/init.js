@@ -9,13 +9,19 @@ exports.builder = function (yargs) {
             type: 'string',
             demand: true
         })
+        .option('engine', {
+            alias: 'e',
+            describe: 'template engine',
+            type: 'string',
+            default: 'handlebars'
+        })
         .example('$0 init wepp_demo')
         .showHelpOnFail(false, 'Specify -h for available options')
         .help('h');
 };
 exports.handler = function (argv) {
-    argv.__proj__ = process.cwd();
+    argv.__cwd__ = process.cwd();
     argv = wepp.unparseArgv(argv);
-    shell.cd(wepp.root); // 脚本目录
+    shell.cd(wepp.__root__); // 脚本目录
     shell.exec('gulp init --unArgv ' + argv); // wepp.cwd执行wepp命令的当前目录
 };
