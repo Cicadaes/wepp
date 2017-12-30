@@ -13,7 +13,7 @@ module.exports = function (gulp, config, plugins, wepp) {
         // });
         // gulp.watch([path.resolve(argv.__cwd__, './*.html')], ['dev:html']);
 
-        wepp.start(argv);
+        wepp.startCluster(argv);
 
         // console.log(wepp)
         /**
