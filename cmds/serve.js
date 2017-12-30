@@ -8,7 +8,7 @@ exports.builder = {
     },
     port: {
         alias: 'p',
-        default: 6000
+        default: 4000
     },
     env: {
         alias: 'e',
