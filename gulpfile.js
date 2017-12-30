@@ -12,6 +12,11 @@ new tasksLoader({
     delimiter: ':'
 }, gulp, wepp)
 
+/**
+ * Set env var for ORIGINAL cwd from Gulp
+ * process.env.INIT_CWD 
+ */
+
 // var taskLoader = require('./gulps/plugins/task-loader');
 
 // taskLoader({

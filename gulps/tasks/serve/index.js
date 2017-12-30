@@ -4,7 +4,6 @@ var fs = require('fs');
 module.exports = function (gulp, config, plugins, wepp) {
     return function () {
         var argv = wepp.parseArgv();
-        
 
         // plugins.connect.server({
         //     root: argv.__cwd__,

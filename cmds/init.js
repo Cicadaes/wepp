@@ -20,9 +20,7 @@ exports.builder = function (yargs) {
         .help('h');
 };
 exports.handler = function (argv) {
-    argv.__cwd__ = process.cwd();
     argv = wepp.unparseArgv(argv);
     
-    shell.cd(wepp.__root__); // 脚本目录
-    shell.exec('gulp init --unArgv ' + argv); // wepp.cwd执行wepp命令的当前目录
+    shell.exec('gulp init --cwd '+ wepp.__root__ +' --unArgv ' + argv); // wepp.cwd执行wepp命令的当前目录
 };

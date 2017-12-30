@@ -4,7 +4,7 @@ var shell = require('shelljs');
 module.exports = function (gulp, config, plugins, wepp) {
     return function () {
         var argv = wepp.parseArgv();
-        var __proj__ = path.join(argv.__cwd__, argv.name);
+        var __proj__ = path.join(process.env.INIT_CWD, argv.name);
         var __template__ = wepp.__template__;
         var copyFiles = [
             ['favicon.ico', 'app'],
