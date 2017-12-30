@@ -7,7 +7,7 @@ require('../lib/wepp');
 yargs.commandDir('../cmds')
     .usage('$0 [domain/namespace] <command> [--args]')
     .demandCommand(1, 'You must specify a domain/namespace and a command')
-    .showHelpOnFail(false, 'Specify --help for available options')
+    .showHelpOnFail(false, 'See "wepp -h" for help.')
     .help('h')
     .alias('h', 'help')
     .version()
