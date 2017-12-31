@@ -1,3 +1,5 @@
 module.exports = {
-    env: 'development'
+    env: 'development',
+    // set true in dev-mode for detail info
+    detailedErrors: true
 }
