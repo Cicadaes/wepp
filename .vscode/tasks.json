@@ -16,7 +16,11 @@
                 "${workspaceRoot}",
                 "--unArgv",
                 "serve,--port,5000,--host,localhost"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
