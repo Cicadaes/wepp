@@ -15,7 +15,7 @@
                 "--cwd",
                 "${workspaceRoot}",
                 "--unArgv",
-                "serve,--port,4000,--host,localhost"
+                "serve,--port,5000,--host,localhost"
             ]
         }
     ]
