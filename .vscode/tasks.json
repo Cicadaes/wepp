@@ -1,0 +1,22 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "gulp serve",
+            "type": "shell",
+            "command": "gulp",
+            "options": {
+                "cwd": "E:\\Projects\\Nodejs\\wepp_test\\jj"
+            },
+            "args": [
+                "serve",
+                "--cwd",
+                "${workspaceRoot}",
+                "--unArgv",
+                "serve,--port,4000,--host,localhost"
+            ]
+        }
+    ]
+}

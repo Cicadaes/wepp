@@ -3,13 +3,22 @@
         "configurations": [
             {
                 "type": "node",
+                "request": "attach",
+                "name": "Debug by Process ID",
+                "processId": "${command:PickProcess}"
+            },
+            {
+                "type": "node",
                 "request": "launch",
                 "name": "Gulp wepp",
+                "cwd": "E:\\Projects\\Nodejs\\wepp_test\\jj",
                 "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
                 "args": [
-                    "init",
+                    "serve",
+                    "--cwd",
+                    "${workspaceRoot}",
                     "--unArgv",
-                    "gen,app,--name,wepp_demo"
+                    "serve,--port,4000,--host,localhost"
                 ]
             },
             {
