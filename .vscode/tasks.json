@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "taskName": "gulp serve",
+            "label": "gulp serve",
             "type": "shell",
             "command": "gulp",
             "options": {
