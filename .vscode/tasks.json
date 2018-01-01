@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "gulp",
             "options": {
-                "cwd": "E:\\Projects\\Nodejs\\wepp_test\\jj"
+                "cwd": "E:\\Projects\\Nodejs\\wepp_demo"
             },
             "args": [
                 "serve",

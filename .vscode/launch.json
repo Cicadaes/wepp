@@ -11,7 +11,7 @@
                 "type": "node",
                 "request": "launch",
                 "name": "Gulp wepp",
-                "cwd": "E:\\Projects\\Nodejs\\wepp_test\\jj",
+                "cwd": "E:\\Projects\\Nodejs\\wepp_demo",
                 "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
                 "args": [
                     "serve",
