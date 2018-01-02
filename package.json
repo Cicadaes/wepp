@@ -24,6 +24,7 @@
     "mocha": "^4.0.1",
     "require-directory": "^2.1.1",
     "shelljs": "^0.7.8",
+    "utilities": "^1.0.5",
     "yargs": "^10.0.3",
     "yargs-parser": "^8.1.0",
     "yargs-unparser": "^1.3.0"
