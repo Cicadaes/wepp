@@ -12,9 +12,6 @@ module.exports = function (gulp, config, plugins, wepp) {
         var projDir = [
             'config',
             'app',
-            'app/public/js',
-            'app/public/assets',
-            'app/public/css',
             'lib',
             'log',
             'test'

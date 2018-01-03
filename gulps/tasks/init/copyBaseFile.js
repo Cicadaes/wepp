@@ -7,7 +7,8 @@ module.exports = function (gulp, config, plugins, wepp) {
         var __proj__ = path.join(process.env.INIT_CWD, argv.name);
         var __template__ = wepp.__template__;
         var copyFiles = [
-            ['favicon.ico', 'app'],
+            ['public', ''],
+            ['favicon.ico', 'public'],
             ['config', ''],
             ['views/'+ argv.engine, 'app/views']
         ];
