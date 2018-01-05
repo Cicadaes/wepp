@@ -10,6 +10,7 @@ module.exports = function (gulp, config, plugins, wepp) {
             ['public', ''],
             ['favicon.ico', 'public'],
             ['config', ''],
+            ['controller', 'app'],
             ['views/'+ argv.engine, 'app/views']
         ];
         copyFiles.forEach(function (cf) {
